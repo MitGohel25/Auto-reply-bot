@@ -14,11 +14,11 @@ client = OpenAI(api_key=API_KEY)
 pyautogui.click(1072 , 1054)
 time.sleep(2)
 
-pyautogui.moveTo(706 , 269)
-pyautogui.dragTo(706 , 900 , duration=2 , button='left')
+pyautogui.moveTo(723 , 277)
+pyautogui.dragTo(1363 , 897 , duration=2 , button='left')
 
 pyautogui.hotkey('ctrl' , 'c')
-pyautogui.click(706 , 269)
+pyautogui.click(723 , 277)
 time.sleep(2)
 
 chat_history = pyperclip.paste()
@@ -28,7 +28,8 @@ print(chat_history)
 completion = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-        {"role": "system", "content": "You are a person named meet who speaks hindi, gujrati as well as english. you are from india and you are a coder. You analyze chat history and respond like meet. output should be the next chat response as meet"},
+        {"role": "system", "content": "You are a person named meet who speaks hindi as well as english. you are from india and you are a coder. You analyze chat history and respond like meet. output should be the next chat response as meet"},
+        {"role": "system", "content": "Do not start like this [21:02, 12/6/2024] sender_name: "},
         {
             "role": "user", "content": chat_history
         }
